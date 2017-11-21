@@ -1,14 +1,33 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View } from 'react-native';
+import { Modal, 
+  Text,
+  TextInput, 
+  TouchableHighlight, 
+  View, 
+  Image,
+  ListView 
+  ScrollView,
+  StyleSheet  } from 'react-native';
+  import { OpenURLButton } from './OpenURLButton'
 
-class AppTitle extends React.Component {
-  // Initialize the hardcoded data
+export class TabBar extends React.Component {
+
+  state = {
+    modalVisible: false,
+  }
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: ds.cloneWithRows([
-        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+        'เหตุด่วนเหตุร้าย', 
+        'ฉุกเฉิน/กู้ชีพ/กู้ภัย', 
+        'ทางการแพทย์', 
+        'หน่วยงานราชการ', 
+        'สาธารณูปโภค', 
+        'สถาบันการเงิน', 
+        'การขนส่ง', 
+        'สอบถามบริการโทรคมนาคม'
       ])
     };
   }
@@ -23,5 +42,3 @@ class AppTitle extends React.Component {
     );
   }
 }
-
-// App registration and rendering

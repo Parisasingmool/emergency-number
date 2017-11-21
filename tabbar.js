@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight, View } from 'react-native';
+import { Modal, 
+  Text,
+  TextInput, 
+  TouchableHighlight, 
+  View, 
+  Image, 
+  ScrollView,
+  StyleSheet } from 'react-native';
+import { OpenURLButton } from './OpenURLButton'
 
 export class TabBar extends React.Component {
 
@@ -13,7 +21,8 @@ export class TabBar extends React.Component {
 
   render() {
     return (
-      <View style={{marginTop: 22}}>
+      <View style={{marginTop: 0, backgroundColor: '#e9967a', flex: 1}}>
+        
         <Modal
           animationType={"slide"}
           transparent={false}
@@ -21,216 +30,133 @@ export class TabBar extends React.Component {
           onRequestClose={() => {alert("Modal has been closed.")}}
           >
 
-         <View style={{marginTop: 22}}>
-          <View>
-          <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
+        <View style={{marginTop: 22, flex: 1}}>
+          <View style={{flexDirection: 'row'}}>
+            <TouchableHighlight onPress={() => {
+                this.setModalVisible(false)
               }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  aaaa                                      
-                </Text>
-              </View>
+              <Text style={{ 
+                fontSize: 24,
+                backgroundColor: '#c0c0c0'
+              }}>
+                Back
+             </Text>
             </TouchableHighlight>
 
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  bbbb
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  cccc
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  dddd
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  eeee
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  ffff
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  gggg
-                </Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={() => {
-              this.setModalVisible(!this.state.modalVisible)
-            }}
-              style={{
-                padding: 12,
-                borderWidth: 2,
-                borderColor: 'black'
-              }}>
-              <View>
-                <Text style={{
-                  fontSize: 20
-                }}>
-                  hhhh
-                </Text>
-              </View>
-            </TouchableHighlight>
+            <Text style={{ 
+              fontSize: 24,
+              backgroundColor: '#ffa07a',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flex: 1,
+              flexDirection: 'column',
+            }}>
+              เบอร์ฉุกเฉิน
+            </Text>
           </View>
          </View>
         </Modal>
 
+      <ScrollView>
         <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
               เหตุด่วนเหตุร้าย</Text>
-          </View>
         </TouchableHighlight>
         <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
-              ทางการแพทย์</Text>
-          </View>
+              ฉุกเฉิน/กู้ชีพ/กู้ภัย</Text>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={() => {
+          this.setModalVisible(true)
+        }}>
+            <Text style={{
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
+            }}>
+              ทางการแพทย์
+            </Text>
         </TouchableHighlight>
          <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
               หน่วยงานราชการ</Text>
-          </View>
         </TouchableHighlight>
          <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20
-            }}>
-              สาธารณูปโภค</Text>
-          </View>
-        </TouchableHighlight>
-         <TouchableHighlight onPress={() => {
-          this.setModalVisible(true)
-        }}>
-          <View>
-            <Text style={{
-              fontSize: 20
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
               สถาบันการเงิน</Text>
-          </View>
         </TouchableHighlight>
          <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
               การขนส่ง</Text>
-          </View>
         </TouchableHighlight>
          <TouchableHighlight onPress={() => {
           this.setModalVisible(true)
         }}>
-          <View>
             <Text style={{
-              fontSize: 20,
-              borderWidth: 2,
-              borderColor: 'black'
+              fontSize: 28,
+              padding: 10,
+              borderWidth: 1,
+              borderColor: '#800000'
             }}>
-              </Text>
-          </View>
+              สอบถามบริการโทรคมนาคม</Text>
         </TouchableHighlight>
-
+      </ScrollView>
 
       </View>
     );
   }
 }
+const styles = StyleSheet.create ({
+   container: {
+      marginTop: 20,
+      flex: 1,
+      // height: 600,
+      // alignItems: 'stretch',
+      // backgroundColor: '#ffb6c1'
+      backgroundColor: 'red'
+   },
+   listitem: {
+      margin: 15,
+      padding: 15,
+      height: 40,
+      borderColor: 'red',
+      borderWidth: 1
+
+   }
+});
